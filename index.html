@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Trip Price Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+    <div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-5">
+        <div class="mb-5">
+            <label for="fuelConsumption" class="block text-gray-700 text-sm font-bold mb-2">Car Fuel Consumption (l/100km):</label>
+            <input type="range" id="fuelConsumption" name="fuelConsumption" min="1" max="20" step="0.5" value="7" class="w-full">
+            <span id="fuelConsumptionValue">7l / 100km</span>
+        </div>
+
+        <div class="mb-5">
+            <label for="pricePerLiter" class="block text-gray-700 text-sm font-bold mb-2">Price Per Liter (€):</label>
+            <input type="range" id="pricePerLiter" name="pricePerLiter" min="1.20" max="2.50" step="0.01" value="1.60" class="w-full">
+            <span id="pricePerLiterValue">€1.60 / liter</span>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-lg font-bold mb-2">Cost:</h2>
+            <table class="table-auto w-full">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">Distance</th>
+                        <th class="px-4 py-2">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="costTable">
+                    <!-- Initial costs will be inserted here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="border px-4 py-2">
+                            <input type="number" id="tripDistance" name="tripDistance" placeholder="Trip Distance (km)" class="w-full">
+                        </td>
+                        <td class="border px-4 py-2" id="tripCost">-</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
